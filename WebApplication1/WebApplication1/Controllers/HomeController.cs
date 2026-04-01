@@ -36,8 +36,17 @@ public class HomeController : Controller
     //     return  File ("~/image/download.jpeg", "image/jpeg");
     // }
 
-    public IActionResult Index(int id)
+    public IActionResult Index()
     {
-        return Content($"id:{id}");
+        return View();
+    }  
+    public IActionResult About()
+    {
+        return View();
+    }
+
+    public IActionResult Contact()
+    {
+        return View();
     }
 }
