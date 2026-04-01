@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using WebApplication1.Models;
 
 namespace WebApplication1.Controllers;
 
@@ -35,10 +36,15 @@ public class HomeController : Controller
     // {
     //     return  File ("~/image/download.jpeg", "image/jpeg");
     // }
-
     public IActionResult Index()
     {
-        return View();
+        List<Student> _students = new List<Student>()
+        {
+            new Student() { Id = 1, Name = "John", Age = 20 },
+            new Student() { Id = 2, Name = "Jane", Age = 22 },
+            new Student() { Id = 3, Name = "Bob", Age = 21 }
+        };
+        return View(_students);
     }  
     public IActionResult About()
     {

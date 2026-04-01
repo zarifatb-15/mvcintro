@@ -1,7 +1,20 @@
 @* @{ *@
 @*    Layout="~/Views/Shared/_Layout.cshtml"; *@
 @* } *@
-
+@using WebApplication1.Models;
+@model List<Student>
 <h1>
    Home About Welcome to ASP.NET MVC!
 </h1>
+<ul>
+   @foreach (var item in Model)
+   {
+      <li>@item.Name</li>
+   }
+   @* @for(int i=0;i<Model.Count; i++) *@
+   @* { *@
+   @*    <li>@Model[i].Name</li> *@
+   @*    <li>@Model[i].Age</li> *@
+   @* } *@
+
+</ul>
