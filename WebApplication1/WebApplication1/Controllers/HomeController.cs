@@ -5,12 +5,25 @@ using WebApplication1.ViewModels;
 namespace WebApplication1.Controllers;
 
 public class HomeController : Controller
- {
-     // public IActionResult Index()
-     // {
-     //     return View();
-     // }
-     
+{
+    private List<Marka> _markalar = new List<Marka>
+    {
+        new Marka{Id=1,Name="BMW"},
+        new Marka{Id=2,Name="Mercedes"},
+        new Marka{Id=3,Name="Audi"}
+    };
+
+    public IActionResult Index()
+    {
+        return View(_markalar);
+    }
+    
+    
+    // public IActionResult Index()
+    // {
+    //     return View();
+    // }
+
     // GET:5276 /Home/Index
     // public JsonResult Index()
     // {
@@ -37,31 +50,31 @@ public class HomeController : Controller
     // {
     //     return  File ("~/image/download.jpeg", "image/jpeg");
     // }
-    public IActionResult Index()
-    {
-        List<Student> _students = new List<Student>()
-        {
-            new Student() { Id = 1, Name = "John", Age = 20 },
-            new Student() { Id = 2, Name = "Jane", Age = 22 },
-            new Student() { Id = 3, Name = "Bob", Age = 21 }
-        };
-        string message = "Welcome to the Home Page";
-        HomeVm homeVm = new HomeVm()
-        {
-            Students = _students,
-            Message = message
-        };
-
-        return View(homeVm);
-        // return View(_students);
-    }  
-    public IActionResult About()
-    {
-        return View();
-    }
-
-    public IActionResult Contact()
-    {
-        return View();
-    }
+    // public IActionResult Index()
+    // {
+    //     List<Student> _students = new List<Student>()
+    //     {
+    //         new Student() { Id = 1, Name = "John", Age = 20 },
+    //         new Student() { Id = 2, Name = "Jane", Age = 22 },
+    //         new Student() { Id = 3, Name = "Bob", Age = 21 }
+    //     };
+    //     string message = "Welcome to the Home Page";
+    //     HomeVm homeVm = new HomeVm()
+    //     {
+    //         Students = _students,
+    //         Message = message
+    //     };
+    //
+    //     return View(homeVm);
+    //     // return View(_students);
+    // }  
+    // public IActionResult About()
+    // {
+    //     return View();
+    // }
+    //
+    // public IActionResult Contact()
+    // {
+    //     return View();
+    // }
 }
