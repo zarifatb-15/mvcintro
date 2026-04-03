@@ -1,12 +1,16 @@
 @* @{ *@
 @*    Layout="~/Views/Shared/_Layout.cshtml"; *@
 @* } *@
-@model List<Student>
+@model HomeVm
+@{
+   var students = Model.Students;
+   var message = Model.Message;
+}
 <h1>
    Home About Welcome to ASP.NET MVC!
 </h1>
 <ul>
-   @foreach (var item in Model)
+   @foreach (var item in Model.Students)
    {
       <li>@item.Name</li>
    }

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Models;
+using WebApplication1.ViewModels;
 
 namespace WebApplication1.Controllers;
 
@@ -44,7 +45,15 @@ public class HomeController : Controller
             new Student() { Id = 2, Name = "Jane", Age = 22 },
             new Student() { Id = 3, Name = "Bob", Age = 21 }
         };
-        return View(_students);
+        string message = "Welcome to the Home Page";
+        HomeVm homeVm = new HomeVm()
+        {
+            Students = _students,
+            Message = message
+        };
+
+        return View(homeVm);
+        // return View(_students);
     }  
     public IActionResult About()
     {
